@@ -1,0 +1,405 @@
+/* Start Import Fonts */
+
+/* Railway */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* End Import Fonts */
+
+/* **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+*/
+
+/* Start css variables */
+:root {
+  --bg--color: rgba(0, 0, 0, 0.15);
+  --header--bg--color: rgba(0, 0, 0, 0.85);
+  --header--navigation--text--color: rgba(255, 255, 255, 0.9);
+  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.3);
+  --bg--overlay--color--mobile: rgba(0, 0, 0, 0.5);
+  --bg--navigation--color--mobile: rgba(0, 0, 0, 0.65);
+}
+/* End css variables */
+
+/* Start Initialize/reset styling */
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  line-height: 160%;
+  letter-spacing: 1.2px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.portfolio--container {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg--color);
+  position: relative;
+}
+/* End Initialize/reset styling */
+
+/* **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+*/
+
+/* Start portfolio--header */
+
+.portfolio--bg--overlay {
+  background-color: var(--bg--overlay--color--mobile);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+}
+
+.portfolio--bg--image {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -10;
+}
+
+.portfolio--downward--chevron--container {
+  height: 40px;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+}
+
+.portfolio--downward--chevron {
+  background: rgb(0, 0, 0, 0.8);
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.portfolio--hero--section {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.portfolio--header {
+  position: fixed;
+  top: -2.5px;
+  left: 0;
+  right: 0;
+  padding: 5% 7%;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: var(--bg--overlay--color--mobile);
+}
+
+.portfolio--heading,
+.portfolio--menu--bar > label > span,
+.portfolio--header > nav > ul > li,
+.portfolio--header > nav > ul > li > a {
+  color: var(--header--navigation--text--color);
+}
+
+.portfolio--heading {
+  font-weight: 700;
+  font-size: x-large;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -2.5px;
+  transform: skewX(-18deg);
+  z-index: 999;
+}
+
+/* Start Menu Bar */
+.portfolio--menu--bar--checkbox {
+  display: none;
+}
+
+.portfolio--menu--bar--checkbox:checked ~ nav {
+  opacity: 1; /* show menu/nav */
+  transform: scale(1, 1); /* scale(X, Y) */
+  transition: transform 400ms ease-in-out 150ms;
+  background: var(--bg--navigation--color--mobile);
+}
+
+.portfolio--menu--bar--checkbox:checked
+  ~ .portfolio--menu--bar
+  > label
+  > span::before {
+  transform: rotate(-45deg);
+  bottom: 0px;
+}
+.portfolio--menu--bar--checkbox:checked
+  ~ .portfolio--menu--bar
+  > label
+  > span::after {
+  transform: rotate(45deg);
+  top: 0px;
+}
+
+.portfolio--menu--bar--checkbox:checked ~ .portfolio--menu--bar > label > span {
+  background: transparent;
+}
+
+.portfolio--menu--bar--checkbox:checked ~ .portfolio--menu--bar > label > span {
+  width: 10px;
+}
+
+.portfolio--menu--bar--checkbox:checked ~ nav li {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: transform 800ms ease-in-out 100ms,
+    opacity 1000ms ease-in-out 650ms;
+}
+
+.portfolio--menu--bar > label {
+  position: absolute;
+  top: -2.5px;
+  right: 0;
+  margin-right: 7%;
+  margin-top: 10px;
+  height: 40px;
+  width: 45px;
+  padding-right: 20px;
+  padding-left: 9px;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid white;
+  border-radius: 7px;
+}
+
+.portfolio--menu--bar > label > span,
+.portfolio--menu--bar > label > span::before,
+.portfolio--menu--bar > label > span::after {
+  display: block;
+  background: white;
+  height: 1.5px;
+  width: 15px;
+  border-radius: 5px;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+
+.portfolio--menu--bar > label {
+  transform: rotate(180deg);
+}
+
+.portfolio--menu--bar > label > span::before,
+.portfolio--menu--bar > label > span::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+}
+
+.portfolio--menu--bar > label > span::before {
+  bottom: 7px;
+}
+
+.portfolio--menu--bar > label > span::after {
+  top: 7px;
+}
+
+/* End Menu Bar */
+
+/* Start Nav */
+
+/* Animation properties - Scale translate Rotate anad Opacity */
+.portfolio--header > nav {
+  position: absolute;
+  opacity: 0;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 1em 2em;
+  transform: scale(1, 0); /* scale (X, Y) */
+  transform-origin: top;
+  transition: transform 400ms ease-in-out 150ms;
+}
+
+.portfolio--header > nav > ul > li {
+  list-style: none;
+  margin-bottom: 2em;
+  text-align: left;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.portfolio--header > nav > ul > li:last-child {
+  margin-bottom: 0px;
+}
+
+/*  */
+
+.portfolio--header > nav > ul > li > a:hover {
+  color: #005b96;
+}
+
+.portfolio--header > nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: 2px;
+  bottom: -5px;
+  background: #005b96;
+  height: 2px;
+  transform-origin: center;
+  transform: scale(0, 1); /* X, Y */
+}
+
+.portfolio--header > nav > ul > li > a:hover::after {
+  transform: scale(1, 1); /* X, Y */
+  transition: transform 250ms ease-in-out 150ms;
+}
+
+.portfolio--nav--active {
+  color: #005b96 !important;
+}
+
+.portfolio--nav--active::after {
+  transform: scale(1, 1) !important; /* X, Y */
+}
+
+/*  */
+
+/* End Nav */
+
+/* Start Tablets and Desktops */
+
+@media only screen and (min-width: 600px) {
+  .portfolio--bg--overlay {
+    height: 95%;
+    background-color: var(--bg--overlay--color--desktop);
+  }
+
+  .portfolio--bg--image {
+    height: 95%;
+  }
+
+  .portfolio--hero--section {
+    height: 95%;
+  }
+
+  .portfolio--menu--bar--checkbox:checked ~ nav,
+  .portfolio--header {
+    background: none;
+  }
+
+  .portfolio--header {
+    position: absolute;
+    padding: 20px;
+    margin: 1.5% 0px;
+    margin-bottom: 0px;
+    padding: 0px 10%;
+    padding-bottom: 0px;
+    height: 60px;
+  }
+
+  .portfolio--menu--bar {
+    display: none;
+  }
+
+  .portfolio--header > nav {
+    display: block;
+    opacity: 1;
+    transform: scale(1, 1); /* X, Y */
+    height: 60px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0px 10%;
+  }
+
+  .portfolio--header > nav > ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: none;
+  }
+
+  .portfolio--header > nav > ul > li {
+    margin-bottom: 0px;
+    margin-left: 2em;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  .portfolio--header > nav > ul > li > a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-size: small;
+  }
+
+  .portfolio--heading {
+    font-size: x-larger;
+    top: 0px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .portfolio--heading {
+    font-size: xx-large;
+  }
+
+  .portfolio--header > nav > ul > li > a {
+    font-size: medium;
+  }
+}
+/* End Tablets and Desktops */
+
+/* End portfolio--header */
+
+/* **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+*/
+
+/* Start Tablets and Desktops */
+@media only screen and (min-width: 480px) {
+}
+/* End Tablets and Desktops */
