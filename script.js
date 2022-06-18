@@ -1,4 +1,7 @@
 const header = document.querySelector(".portfolio--header");
+const navigation_menu_checkbox = document.getElementById(
+  "portfolio--menu--bar--checkbox"
+);
 
 // On media query i.e. screen size
 const mediaQuery = window.matchMedia("(min-width: 600px)");
@@ -6,7 +9,7 @@ function headerBackgroundColor(mediaQuery) {
   if (mediaQuery.matches) {
     header.style.background = "transparent";
   } else {
-    // header.style.background = "rgba(0, 0, 0, 0.65)";
+    header.style.background = "rgba(0, 0, 0, 0.7)";
   }
 }
 
@@ -32,9 +35,6 @@ const navigation_menu = document.getElementById("portfolio--nav");
 navigation_menu.addEventListener("click", (e) => {
   //for mobile only
   if (!mediaQuery.matches) {
-    const navigation_menu_checkbox = document.getElementById(
-      "portfolio--menu--bar--checkbox"
-    );
     navigation_menu_checkbox.checked = false;
   }
 
@@ -60,4 +60,25 @@ const removeNavActiveClasses = (navList) => {
 const heading = document.querySelector(".portfolio--heading");
 heading.addEventListener("click", () => {
   removeNavActiveClasses(navigation_menu.children);
+  navigation_menu_checkbox.checked = false;
 });
+
+//
+//
+//
+
+var i = 0;
+var txt = "Hey, my name is"; /* The text */
+var speed = 150; /* The speed/duration of the effect in milliseconds */
+
+const x = document.getElementById("portfolio--hero--section--typing");
+x.style.color = "rgba(255, 255, 255, 0.9)";
+function typeWriter() {
+  if (i < txt.length) {
+    x.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+typeWriter();

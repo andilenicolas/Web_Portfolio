@@ -17,13 +17,13 @@
   --bg--color: rgba(0, 0, 0, 0.15);
   --header--bg--color: rgba(0, 0, 0, 0.85);
   --header--navigation--text--color: rgba(255, 255, 255, 0.9);
-  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.35);
+  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.55);
   --bg--overlay--color--mobile: rgba(0, 0, 0, 0.5);
   --bg--navigation--color--mobile: rgba(0, 0, 0, 0.65);
   --button--nav--active--color: #005b96;
 
   --desktop--background--size: 100%;
-  --mobile--background--size: 50%;
+  --mobile--background--size: 60%;
 }
 /* End css variables */
 
@@ -105,13 +105,14 @@
   /* background: red; */
   /* color: white; */
   position: absolute;
-  top: 60px;
+  top: 50px;
   height: calc(100% - 60px);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.6em;
 }
 
 .portfolio--header {
@@ -159,7 +160,7 @@
   transition: transform 400ms ease-in-out 150ms;
   background: var(--bg--navigation--color--mobile);
   backdrop-filter: blur(2px);
-  height: calc(100% * 5.75);
+  height: calc(100% * 4);
 }
 
 .portfolio--menu--bar--checkbox:checked
@@ -283,10 +284,10 @@
   left: -2px;
   right: 2px;
   bottom: -5px;
-  background: var(--button--nav--active--color);
+  background: white;
   height: 2px;
   transform-origin: center;
-  transform: scale(0, 1); /* X, Y */
+  transform: scale(1, 1); /* X, Y */
 }
 
 .portfolio--header > nav > ul > li > a:hover::after {
@@ -300,6 +301,7 @@
 
 .portfolio--nav--active::after {
   transform: scale(1, 1) !important; /* X, Y */
+  background: var(--button--nav--active--color) !important;
 }
 
 /*  */
@@ -346,13 +348,13 @@
     display: block;
     opacity: 1;
     transform: scale(1, 1); /* X, Y */
-    height: 60px;
+    height: 100%;
     position: absolute;
     top: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: var(--bg--overlay--color--desktop);
+    background-color: rgba(0, 0, 0, 0.1);
     padding: 0px 10%;
   }
 
@@ -368,6 +370,11 @@
     margin-left: 2em;
     opacity: 1;
     transform: translateX(0px);
+  }
+
+  .portfolio--header > nav > ul > li > a::after {
+    background: var(--button--nav--active--color);
+    transform: scale(0, 1); /* X, Y */
   }
 
   .portfolio--header > nav > ul > li > a {
@@ -412,3 +419,149 @@
 @media only screen and (min-width: 480px) {
 }
 /* End Tablets and Desktops */
+
+/*  */
+/*  */
+/*  */
+
+body {
+  perspective: 500px; /* 500px away from the center of the axis of the animation */
+}
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animate 6s ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+    transition: opacity 1s ease-in-out 800ms;
+  }
+}
+
+.panel {
+  --_width: 16px; /* 100px */
+
+  /* border: 1px solid white; */
+  width: var(--_width);
+  height: 50px;
+  position: relative;
+
+  animation: rotate 6s var(--delay) infinite ease-in-out alternate;
+  overflow: hidden;
+}
+
+@keyframes rotate {
+  0%,
+  10% {
+    transform: rotateX(0deg);
+  }
+  90%,
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.panel::before {
+  position: absolute;
+  content: "Andile";
+  width: max-content;
+  /* color: hsl(var(--hue), 75%, 75%); */
+
+  background: -webkit-linear-gradient(
+    rgba(255, 255, 255, 1),
+    #005b96,
+    rgba(255, 255, 255, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 60px;
+  top: -25px;
+  left: var(--left);
+}
+
+.panel:nth-child(1) {
+  --left: calc(var(--_width) * 0 * -1);
+  --hue: calc(360 / 12 * 1);
+  --delay: calc(0.1s * 1);
+}
+
+.panel:nth-child(2) {
+  --left: calc(var(--_width) * 1 * -1);
+  --hue: calc(360 / 12 * 2);
+  --delay: calc(0.1s * 2);
+}
+
+.panel:nth-child(3) {
+  --left: calc(var(--_width) * 2 * -1);
+  --hue: calc(360 / 12 * 3);
+  --delay: calc(0.1s * 3);
+}
+
+.panel:nth-child(4) {
+  --left: calc(var(--_width) * 3 * -1);
+  --hue: calc(360 / 12 * 4);
+  --delay: calc(0.1s * 4);
+}
+
+.panel:nth-child(5) {
+  --left: calc(var(--_width) * 4 * -1);
+  --hue: calc(360 / 12 * 5);
+  --delay: calc(0.1s * 5);
+}
+
+.panel:nth-child(6) {
+  --left: calc(var(--_width) * 5 * -1);
+  --hue: calc(360 / 12 * 6);
+  --delay: calc(0.1s * 6);
+}
+
+/*  */
+
+.panel:nth-child(7) {
+  --left: calc(var(--_width) * 6 * -1);
+  --hue: calc(360 / 12 * 7);
+  --delay: calc(0.1s * 7);
+}
+
+.panel:nth-child(8) {
+  --left: calc(var(--_width) * 7 * -1);
+  --hue: calc(360 / 12 * 8);
+  --delay: calc(0.1s * 8);
+}
+
+.panel:nth-child(9) {
+  --left: calc(var(--_width) * 8 * -1);
+  --hue: calc(360 / 12 * 9);
+  --delay: calc(0.1s * 9);
+}
+
+.panel:nth-child(10) {
+  --left: calc(var(--_width) * 9 * -1);
+  --hue: calc(360 / 12 * 10);
+  --delay: calc(0.1s * 10);
+}
+
+.panel:nth-child(11) {
+  --left: calc(var(--_width) * 10 * -1);
+  --hue: calc(360 / 12 * 11);
+  --delay: calc(0.1s * 11);
+}
+
+.panel:nth-child(12) {
+  --left: calc(var(--_width) * 11 * -1);
+  --hue: calc(360 / 12 * 12);
+  --delay: calc(0.1s * 12);
+}
+
+/*  */
+/*  */
+/*  */
