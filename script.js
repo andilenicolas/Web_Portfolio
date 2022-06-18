@@ -6,7 +6,7 @@ function headerBackgroundColor(mediaQuery) {
   if (mediaQuery.matches) {
     header.style.background = "transparent";
   } else {
-    header.style.background = "rgb(0, 0, 0, 0.5)";
+    // header.style.background = "rgba(0, 0, 0, 0.65)";
   }
 }
 

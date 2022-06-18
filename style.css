@@ -17,9 +17,13 @@
   --bg--color: rgba(0, 0, 0, 0.15);
   --header--bg--color: rgba(0, 0, 0, 0.85);
   --header--navigation--text--color: rgba(255, 255, 255, 0.9);
-  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.3);
+  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.35);
   --bg--overlay--color--mobile: rgba(0, 0, 0, 0.5);
   --bg--navigation--color--mobile: rgba(0, 0, 0, 0.65);
+  --button--nav--active--color: #005b96;
+
+  --desktop--background--size: 100%;
+  --mobile--background--size: 50%;
 }
 /* End css variables */
 
@@ -34,7 +38,7 @@
   font-family: "Raleway", sans-serif;
   line-height: 160%;
   letter-spacing: 1.2px;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .portfolio--container {
@@ -64,13 +68,13 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 50%;
+  height: var(--mobile--background--size);
 }
 
 .portfolio--bg--image {
   position: relative;
   width: 100%;
-  height: 50%;
+  height: var(--mobile--background--size);
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -98,15 +102,16 @@
 }
 
 .portfolio--hero--section {
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 50%;
+  /* background: red; */
+  /* color: white; */
   position: absolute;
+  top: 60px;
+  height: calc(100% - 60px);
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: white;
+  justify-content: center;
 }
 
 .portfolio--header {
@@ -120,7 +125,8 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background: var(--bg--overlay--color--mobile);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
 }
 
 .portfolio--heading,
@@ -152,6 +158,8 @@
   transform: scale(1, 1); /* scale(X, Y) */
   transition: transform 400ms ease-in-out 150ms;
   background: var(--bg--navigation--color--mobile);
+  backdrop-filter: blur(2px);
+  height: calc(100% * 5.75);
 }
 
 .portfolio--menu--bar--checkbox:checked
@@ -266,7 +274,7 @@
 /*  */
 
 .portfolio--header > nav > ul > li > a:hover {
-  color: #005b96;
+  color: var(--button--nav--active--color);
 }
 
 .portfolio--header > nav > ul > li > a::after {
@@ -275,7 +283,7 @@
   left: -2px;
   right: 2px;
   bottom: -5px;
-  background: #005b96;
+  background: var(--button--nav--active--color);
   height: 2px;
   transform-origin: center;
   transform: scale(0, 1); /* X, Y */
@@ -287,7 +295,7 @@
 }
 
 .portfolio--nav--active {
-  color: #005b96 !important;
+  color: var(--button--nav--active--color) !important;
 }
 
 .portfolio--nav--active::after {
@@ -302,21 +310,22 @@
 
 @media only screen and (min-width: 600px) {
   .portfolio--bg--overlay {
-    height: 95%;
+    height: var(--desktop--background--size);
     background-color: var(--bg--overlay--color--desktop);
   }
 
   .portfolio--bg--image {
-    height: 95%;
+    height: var(--desktop--background--size);
   }
 
   .portfolio--hero--section {
-    height: 95%;
+    /* height: var(--desktop--background--size); */
   }
 
   .portfolio--menu--bar--checkbox:checked ~ nav,
   .portfolio--header {
-    background: none;
+    background-color: var(--bg--overlay--color--desktop);
+    backdrop-filter: blur(0px);
   }
 
   .portfolio--header {
@@ -343,7 +352,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
+    background-color: var(--bg--overlay--color--desktop);
     padding: 0px 10%;
   }
 
