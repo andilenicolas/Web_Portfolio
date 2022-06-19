@@ -10,7 +10,7 @@
 
   <!-- Start Body -->
   <body class="portfolio--container">
-    <!-- background image -->
+    <!-- Start Background Overlay -->
     <div class="portfolio--bg--overlay">
       <!-- Start Arrow -->
       <a
@@ -36,15 +36,9 @@
       </a>
       <!-- End Arrow -->
 
+      <!-- Start Hero Section -->
       <section class="portfolio--hero--section">
-        <div
-          style="
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-size: large;
-          "
-        >
+        <div class="portfolio--hero--section--name">
           <div id="portfolio--hero--section--typing"></div>
           <div class="banner">
             <span class="panel" style="color: rgba(255, 255, 255, 0.9)"> </span>
@@ -61,42 +55,28 @@
             <span class="panel" style="color: rgba(255, 255, 255, 0.9)"> </span>
           </div>
         </div>
-        <span style="color: rgba(255, 255, 255, 0.9); font-size: small"
-          >. . . but you can call me Nick
+
+        <span class="portfolio--hero--section--alternate--name">
+          . . . but you can call me Nick
         </span>
 
-        <h4 style="color: rgba(255, 255, 255, 0.6)">&#123; &#125;</h4>
+        <h4 class="portfolio--hero--section--curly--brackets">&#123; &#125;</h4>
 
-        <h3 style="color: rgba(255, 255, 255, 0.9); font-weight: 800">
+        <h3 class="portfolio--hero--section--job--title">
+          <p style="color: rgba(255, 255, 255, 0.9); font-weight: 400">
+            I am a &#160;
+          </p>
           <span style="color: rgba(255, 255, 255, 0.6)">&#9001;</span>
-          Software 👨‍💻 Engineer
+          <div>Software 👨‍💻 Engineer</div>
           <span style="color: rgba(255, 255, 255, 0.6)">&#9002;</span>
         </h3>
 
-        <h4 style="color: rgba(255, 255, 255, 0.6)">&#123; &#125;</h4>
+        <h4 class="portfolio--hero--section--curly--brackets">&#123; &#125;</h4>
 
-        <section style="display: flex">
-          <button
-            style="
-              color: rgba(255, 255, 255, 0.9);
-              background: #005b96;
-              border-color: #005b96;
-              border-radius: 6px;
-              padding: 3px 6px;
-              width: 80px;
-              margin-right: 2rem;
-              cursor: pointer;
-              width: 95px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 0.2em;
-              font-weight: 700;
-            "
-          >
+        <section class="portfolio--hero--section--action">
+          <button class="portfolio--button" style="font-size: small">
             CV
             <svg
-              style="width: 1.2em"
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
               fill="none"
@@ -105,32 +85,16 @@
               stroke-width="2"
             >
               <path
-                style="color: rgba(255, 255, 255, 0.9)"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
               />
             </svg>
           </button>
-          <button
-            style="
-              color: rgba(255, 255, 255, 0.9);
-              background: #005b96;
-              border-color: #005b96;
-              border-radius: 6px;
-              padding: 3px 6px;
-              width: 95px;
-              cursor: pointer;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 0.2em;
-              font-weight: 700;
-            "
-          >
+
+          <button class="portfolio--button" style="font-size: small">
             Contact
             <svg
-              style="width: 1.2em"
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
               fill="none"
@@ -139,7 +103,6 @@
               stroke-width="2"
             >
               <path
-                style="color: rgba(255, 255, 255, 0.9)"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
@@ -147,17 +110,73 @@
             </svg>
           </button>
         </section>
-      </section>
-    </div>
 
+        <!-- Start Social Icons -->
+        <section class="portfolio--hero--section--social--icons--container">
+          <a
+            href="https://github.com/andilenicolas"
+            target="_blank"
+            class="portfolio--hero--section--social--icons--github"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+            >
+              <path
+                d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/andile-nicolas-sithole-391a991b1/"
+            target="_blank"
+            class="portfolio--hero--section--social--icons--linkedin"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="30"
+              height="30"
+              viewBox="0 0 50 50"
+            >
+              <path
+                d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            href="mailto:andilenicolas6@gmail.com"
+            target="_blank"
+            class="portfolio--hero--section--social--icons--email"
+          >
+            <img
+              src="./images/email.png"
+              alt="email icon"
+              width="30"
+              height="30"
+            />
+          </a>
+        </section>
+        <!-- End Social Icons -->
+      </section>
+      <!-- End Hero Section -->
+    </div>
+    <!-- End Background Overlay -->
+
+    <!-- background image -->
     <img
       class="portfolio--bg--image"
-      src="./images/lance-reis-RPxFWjrsC7c-unsplash.jpg"
+      src="./images/pexels-lukas-574073.jpg"
       alt="hero background image"
     />
 
     <!-- Start Header, Hero & Navigation -->
-    <header id="portfolio--header" class="portfolio--header">
+    <header id="portfolio--headerId" class="portfolio--header">
       <a href="#" class="portfolio--heading">Personal</a>
 
       <input
@@ -189,7 +208,7 @@
     <!-- Start Main Content -->
     <main id="portfolio--main" class="portfolio--main">
       <section id="portfolio--skills" class="portfolio--skills">
-        Skillz
+        <h4 class="portfolio--main--heading">Skillz</h4>
         <div>Skill 1</div>
         <div>Skill 1</div>
         <div>Skill 1</div>
@@ -216,8 +235,9 @@
         <div>Skill 1</div>
         <div>Skill 1</div>
       </section>
+
       <section id="portfolio--about" class="portfolio--about">
-        About Me
+        <h4 class="portfolio--main--heading">About Me</h4>
 
         <div>paragraph</div>
         <div>paragraph</div>
@@ -232,8 +252,9 @@
         <div>paragraph</div>
         <div>paragraph</div>
       </section>
+
       <section id="portfolio--education" class="portfolio--education">
-        Education
+        <h4 class="portfolio--main--heading">Education</h4>
         <div>education</div>
         <div>education</div>
         <div>education</div>
@@ -244,6 +265,7 @@
       </section>
 
       <section id="portfolio--contact" class="portfolio--contact">
+        <h4 class="portfolio--main--heading">Contact Me</h4>
         <div>Contact</div>
         <div>Contact</div>
         <div>Contact</div>
@@ -254,6 +276,10 @@
       </section>
     </main>
     <!-- End Main Content -->
+
+    <!-- Start Footer -->
+    <footer style="background: black">footer</footer>
+    <!-- End Footer -->
   </body>
   <!-- End Body -->
 

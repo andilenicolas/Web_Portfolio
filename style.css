@@ -17,8 +17,8 @@
   --bg--color: rgba(0, 0, 0, 0.15);
   --header--bg--color: rgba(0, 0, 0, 0.85);
   --header--navigation--text--color: rgba(255, 255, 255, 0.9);
-  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.55);
-  --bg--overlay--color--mobile: rgba(0, 0, 0, 0.5);
+  --bg--overlay--color--desktop: rgba(0, 0, 0, 0.65);
+  --bg--overlay--color--mobile: rgba(0, 0, 0, 0.6);
   --bg--navigation--color--mobile: rgba(0, 0, 0, 0.65);
   --button--nav--active--color: #005b96;
 
@@ -66,9 +66,9 @@
 .portfolio--bg--overlay {
   background-color: var(--bg--overlay--color--mobile);
   position: absolute;
-  top: 0;
+  top: -60px;
   width: 100%;
-  height: var(--mobile--background--size);
+  height: calc(var(--mobile--background--size) + 60px);
 }
 
 .portfolio--bg--image {
@@ -89,6 +89,7 @@
   text-align: center;
   position: absolute;
   bottom: -20px;
+  z-index: 50;
 }
 
 .portfolio--downward--chevron {
@@ -102,10 +103,8 @@
 }
 
 .portfolio--hero--section {
-  /* background: red; */
-  /* color: white; */
   position: absolute;
-  top: 50px;
+  top: 75px;
   height: calc(100% - 60px);
   width: 100%;
   display: flex;
@@ -115,9 +114,106 @@
   gap: 0.6em;
 }
 
+.portfolio--hero--section--name {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: large;
+  gap: 0.5em;
+}
+
+.portfolio--hero--section--alternate--name {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: small;
+}
+
+.portfolio--hero--section--curly--brackets {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.portfolio--hero--section--job--title {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio--hero--section--job--title div {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: large;
+}
+
+/*  */
+
+.portfolio--hero--section--action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.portfolio--button {
+  color: rgba(255, 255, 255, 0.9);
+  background: #005b96;
+  border-radius: 10px;
+  padding: 4px 8px;
+  cursor: pointer;
+  width: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  transform: scale(0.9, 0.9);
+
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid #00deff;
+  background-image: linear-gradient(#47c465, #00deff),
+    linear-gradient(#47c465, #00deff);
+  background-size: 2px 100%;
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+}
+
+/*  */
+
+/*  */
+
+.portfolio--button:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border-top: 2px solid #47c465;
+  transform: scale(1.1, 1.1);
+  transition: transform 400ms ease-in-out, border-top 400ms ease-in-out;
+}
+
+.portfolio--button svg {
+  width: 1.2rem;
+}
+
+.portfolio--button svg path {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.portfolio--hero--section--social--icons--container {
+  display: none;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
 .portfolio--header {
-  position: fixed;
-  top: -2.5px;
+  position: fixed !important;
+  top: 0;
   left: 0;
   right: 0;
   padding: 5% 7%;
@@ -126,8 +222,9 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--bg--navigation--color--mobile);
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
+  z-index: 1000 !important;
 }
 
 .portfolio--heading,
@@ -312,7 +409,7 @@
 
 @media only screen and (min-width: 600px) {
   .portfolio--bg--overlay {
-    height: var(--desktop--background--size);
+    height: calc(var(--desktop--background--size) + 60px);
     background-color: var(--bg--overlay--color--desktop);
   }
 
@@ -320,24 +417,136 @@
     height: var(--desktop--background--size);
   }
 
+  /*  */
+  /*  */
+  /*  */
+
   .portfolio--hero--section {
-    /* height: var(--desktop--background--size); */
+    align-items: flex-start;
+    padding-left: 12%;
+    margin-top: -2%;
   }
+
+  .portfolio--hero--section--name {
+    font-size: xx-large !important;
+    gap: 1rem;
+  }
+
+  .panel::before {
+    font-size: 400px;
+  }
+
+  .portfolio--hero--section--alternate--name {
+    font-size: small;
+    margin-bottom: 2.5rem;
+  }
+
+  .portfolio--hero--section--curly--brackets {
+    display: none;
+  }
+
+  .portfolio--hero--section--job--title {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .portfolio--hero--section--job--title > div {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: x-large;
+  }
+
+  /*  */
+
+  .portfolio--hero--section--action {
+    width: fit-content;
+  }
+
+  .portfolio--button {
+    font-size: small;
+    padding: 8px 15px;
+    width: 110px;
+    gap: 0.2rem;
+  }
+
+  .portfolio--hero--section--social--icons--container {
+    /* background: red; */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 8px;
+    backdrop-filter: blur(2.5px);
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
+  }
+
+  .portfolio--hero--section--social--icons--container a:hover::after {
+    content: "";
+    position: absolute;
+    right: 35px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 6.5px solid transparent;
+    border-left: 12.75px solid var(--button--nav--active--color);
+    border-bottom: 6.5px solid transparent;
+  }
+
+  .portfolio--hero--section--social--icons--container a:hover::before {
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    right: 50px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(20px); */
+    border-radius: 6px;
+    font-size: small;
+    opacity: 0.8;
+  }
+
+  .portfolio--hero--section--social--icons--github:hover::before {
+    content: "My Github";
+    width: 89px;
+  }
+
+  .portfolio--hero--section--social--icons--linkedin:hover::before {
+    content: "My LinkedIn";
+    width: 102px;
+  }
+
+  .portfolio--hero--section--social--icons--email:hover::before {
+    content: "My Email";
+    width: 81px;
+  }
+
+  .portfolio--hero--section--social--icons--github:hover,
+  .portfolio--hero--section--social--icons--linkedin:hover,
+  .portfolio--hero--section--social--icons--email:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition: transform 500ms ease-in-out;
+  }
+
+  /*  */
+  /*  */
+  /*  */
 
   .portfolio--menu--bar--checkbox:checked ~ nav,
   .portfolio--header {
-    background-color: var(--bg--overlay--color--desktop);
+    /* background-color: var(--bg--overlay--color--desktop); */
     backdrop-filter: blur(0px);
   }
 
   .portfolio--header {
-    position: absolute;
-    padding: 20px;
-    margin: 1.5% 0px;
-    margin-bottom: 0px;
-    padding: 0px 10%;
-    padding-bottom: 0px;
-    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0% 12%;
+    height: 100px;
+  }
+
+  .portfolio--heading {
+    height: 100px;
   }
 
   .portfolio--menu--bar {
@@ -355,7 +564,7 @@
     justify-content: flex-end;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 0px 10%;
+    padding: 0px 12%;
   }
 
   .portfolio--header > nav > ul {
@@ -381,12 +590,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    font-size: small;
-  }
-
-  .portfolio--heading {
-    font-size: x-larger;
-    top: 0px;
+    font-size: 13.5px;
   }
 }
 
@@ -396,7 +600,11 @@
   }
 
   .portfolio--header > nav > ul > li > a {
-    font-size: medium;
+    font-size: 15px;
+  }
+
+  .portfolio--header > nav > ul > li {
+    margin-left: 3em;
   }
 }
 /* End Tablets and Desktops */
@@ -431,7 +639,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: animate 6s ease-in-out;
+  animation: animate 5s ease-in-out;
 }
 
 @keyframes animate {
@@ -562,6 +770,100 @@ body {
   --delay: calc(0.1s * 12);
 }
 
-/*  */
-/*  */
-/*  */
+/* **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+*/
+
+/* Start portfolio--main */
+.portfolio--main {
+  padding: 0% 7%;
+  margin: 10% 0%;
+  display: grid;
+  gap: 2em;
+  outline: 1px solid red;
+}
+
+/* heading */
+.portfolio--main--heading {
+  text-align: center;
+  font-size: x-large;
+  color: var(--button--nav--active--color);
+  position: relative;
+  margin-bottom: 1em;
+  /* width: fit-content;  */
+}
+
+.portfolio--main--heading::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: 2px;
+  bottom: -5px;
+  background: var(--button--nav--active--color);
+  height: 2px;
+  transform-origin: center;
+  transform: scale(1, 1); /* X, Y */
+}
+/* heading */
+
+/* skills */
+
+.portfolio--skills {
+  outline: 1px solid purple;
+  display: grid;
+  gap: 1em;
+}
+/* skills */
+
+/* Bigger screens */
+@media only screen and (min-width: 600px) {
+  .portfolio--main {
+    padding: 0% 0%;
+    margin: 10% 12%;
+    margin-bottom: 5%;
+  }
+}
+
+/* Even bigger screens */
+@media only screen and (min-width: 700px) {
+}
+/* End portfolio--main */
+/* **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+   **********************************************************************
+*/

@@ -1,4 +1,4 @@
-const header = document.querySelector(".portfolio--header");
+const header = document.getElementById("portfolio--headerId");
 const navigation_menu_checkbox = document.getElementById(
   "portfolio--menu--bar--checkbox"
 );
@@ -7,9 +7,9 @@ const navigation_menu_checkbox = document.getElementById(
 const mediaQuery = window.matchMedia("(min-width: 600px)");
 function headerBackgroundColor(mediaQuery) {
   if (mediaQuery.matches) {
-    header.style.background = "transparent";
+    // header.style.background = "transparent";
   } else {
-    header.style.background = "rgba(0, 0, 0, 0.7)";
+    // header.style.background = "rgba(0, 0, 0, 0.7)";
   }
 }
 
@@ -20,13 +20,15 @@ mediaQuery.addEventListener("change", () => {
 // On scroll
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 110) {
-    header.style.position = "fixed";
-    header.style.marginTop = "0%";
-    header.style.background = "var(--header--bg--color)";
+    // header.style.position = "fixed !important";
+    // header.style.marginTop = "0%";
+    // header.style.background = "var(--header--bg--color)";
+    // header.style.zIndex = "1000";
+    console.log("fix bar");
   } else {
-    header.style.position = "absolute";
-    header.style.marginTop = "1.5%";
-    headerBackgroundColor(mediaQuery);
+    // header.style.position = "absolute";
+    // header.style.marginTop = "1.5%";
+    // headerBackgroundColor(mediaQuery);
   }
 });
 
