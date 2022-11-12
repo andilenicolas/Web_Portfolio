@@ -312,6 +312,7 @@ header > nav > ul > li:last-child > a {
     width: 70%;
     height: 100%;
     margin-inline: auto;
+    padding: 0;
     display: grid;
     place-items: center;
     grid-template-columns: 1.2fr 2fr;
@@ -367,5 +368,6 @@ header > nav > ul > li:last-child > a {
   .main-content {
     width: 70%;
     margin-inline: auto;
+    padding: 0;
   }
 }
