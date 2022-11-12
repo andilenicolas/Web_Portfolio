@@ -29,28 +29,37 @@ const ResetActiveNavItem = () => {
 
 //
 
+// On media query i.e. screen size
+const mediaQuery = window.matchMedia("(min-width: 700px)");
+
 const MenuBar = Nav.querySelector(".menu-bar");
 const MenuClose = Nav.querySelector(".menu-close");
 const NavItemsContainer = Nav.querySelector("ul");
+const Body = document.querySelector("body");
 MenuBar.addEventListener("click", (e) => {
-  NavItemsContainer.style.display = "grid";
-  MenuBar.style.display = "none";
-  MenuClose.style.display = "block";
+  if (mediaQuery.matches != true) {
+    MenuBar.style.display = "none";
+    NavItemsContainer.style.display = "grid";
+    MenuClose.style.display = "block";
+    Body.style.overflow = "hidden";
+  }
 });
 
 MenuClose.addEventListener("click", (e) => {
-  NavItemsContainer.style.display = "none";
-  MenuBar.style.display = "block";
-  MenuClose.style.display = "none";
+  if (mediaQuery.matches != true) {
+    NavItemsContainer.style.display = "none";
+    MenuClose.style.display = "none";
+    MenuBar.style.display = "block";
+    Body.style.overflow = "scroll";
+  }
 });
 
-// On media query i.e. screen size
-const mediaQuery = window.matchMedia("(min-width: 700px)");
 NavItemsContainer.addEventListener("click", (e) => {
   if (mediaQuery.matches != true) {
     NavItemsContainer.style.display = "none";
-    MenuBar.style.display = "block";
     MenuClose.style.display = "none";
+    MenuBar.style.display = "block";
+    Body.style.overflow = "scroll";
   }
 });
 
