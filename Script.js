@@ -51,3 +51,5 @@ NavItemsContainer.addEventListener("click", (e) => {
     MenuClose.style.display = "none";
   }
 });
+
+// Nav end
