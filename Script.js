@@ -27,6 +27,8 @@ const ResetActiveNavItem = () => {
   });
 };
 
+//
+
 const MenuBar = Nav.querySelector(".menu-bar");
 const MenuClose = Nav.querySelector(".menu-close");
 const NavItemsContainer = Nav.querySelector("ul");
