@@ -70,3 +70,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none !important;
+}
