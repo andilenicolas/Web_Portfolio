@@ -2,8 +2,12 @@
 const Nav = document.querySelector("nav");
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 110) {
+    // Nav.style.filter =
+    //   "drop-shadow(0 4px 3px rgb(var(--clr-secondary) / 0.07)) drop-shadow(0 2px 2px rgb(var(--clr-secondary) / 0.06))";
+
     Nav.style.filter =
-      "drop-shadow(0 4px 3px rgb(var(--clr-secondary) / 0.07)) drop-shadow(0 2px 2px rgb(var(--clr-secondary) / 0.06))";
+      "drop-shadow(0 4px 3px rgba(var(--clr-secondary), 0.07)) drop-shadow(0 2px 2px rgba(var(--clr-secondary), 0.06))";
+
     Nav.style.border = "1px solid rgba(var(--clr-secondary), 0.1)";
   } else {
     Nav.style.removeProperty("filter");
@@ -64,3 +68,43 @@ NavItemsContainer.addEventListener("click", (e) => {
 });
 
 // Nav end
+
+//Skills
+
+const Skillslist = [
+  ...document.querySelector(".skills-list").querySelectorAll("span"),
+];
+
+const HandleSkillsListChange = (skills) => {
+  Skillslist.map((Item) => {
+    if (Item.id == skills || skills == "skills-all") {
+      Item.style.display = "flex";
+    } else {
+      Item.style.display = "none";
+    }
+  });
+};
+HandleSkillsListChange("skills-all");
+
+const SkillsNav = [
+  ...document.querySelector(".skills-nav").querySelectorAll("span"),
+];
+
+SkillsNav.map((Item) => {
+  Item.addEventListener("click", (e) => {
+    // e.preventDefault();
+    HandleSkillsNavChange(Item);
+  });
+});
+
+const HandleSkillsNavChange = (Item) => {
+  ResetSkillsNavActive();
+  Item.getElementsByTagName("input")[0].checked = true;
+  HandleSkillsListChange(Item.getElementsByTagName("input")[0].id);
+};
+
+const ResetSkillsNavActive = () => {
+  SkillsNav.map((Item) => {
+    Item.getElementsByTagName("input")[0].checked = false;
+  });
+};
