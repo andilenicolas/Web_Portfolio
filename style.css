@@ -23,6 +23,7 @@ body {
   color: rgba(var(--clr-secondary), 1);
   font-size: var(--text-base);
   overflow-x: hidden !important;
+  position: relative;
 }
 
 .btn {
@@ -41,6 +42,34 @@ body {
   color: rgba(var(--clr-background), 1);
   background-color: rgba(var(--clr-secondary), 1);
   border: 1px solid rgba(var(--clr-secondary), 1);
+}
+
+/* *************************************************************** */
+/* *************************************************************** */
+/* BACK TO TOP */
+/* *************************************************************** */
+/* *************************************************************** */
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  bottom: 8%;
+  right: 3%;
+  background-color: rgba(var(--clr-accent), 1);
+  padding: 0.875rem 0.325rem;
+  opacity: 1;
+}
+
+@media only screen and (min-width: 700px) {
+  .back-to-top {
+    bottom: 5%;
+    right: 15%;
+    opacity: 0.5;
+  }
+
+  .back-to-top:hover {
+    opacity: 1;
+  }
 }
 
 header {
@@ -141,18 +170,23 @@ header > nav {
 header > nav > ul {
   position: fixed;
   z-index: 1000;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101vh;
+  padding: 100px 3% 10% 3%;
   display: none;
   place-items: center;
   list-style: none;
-  background: rgba(var(--clr-secondary), 0.1);
-  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1000000000000000000px);
 }
 
 header > nav > ul > li > a {
   position: relative;
   text-decoration: none;
   color: rgba(var(--clr-secondary), 1);
+  font-size: var(--text-h6);
 }
 
 header > nav > ul > li > a:hover,
@@ -209,26 +243,35 @@ header > nav > ul > li:last-child > a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.125rem;
+  /* gap: 1.125rem; */
+  gap: 0.875rem;
 }
 
 .hero-section > div > div {
   /* Heading */
-  font-size: var(--text-h2);
+  font-size: var(--text-h3);
+  line-height: 1.5rem;
   font-weight: 900;
-  line-height: 3rem;
 }
 
 .hero-section > div > div > p > span {
   font-size: var(--text-h1) !important;
-  text-decoration: underline 2.5px;
+  /* text-decoration: underline 2.5px; */
   font-style: italic;
   letter-spacing: 0.2rem;
+  font-weight: 900;
 }
 
 .hero-section > div > div > span {
   /* Sub-Heading */
   font-size: var(--text-lower-base);
+}
+
+.hero-section > div > span {
+  /* Role */
+  color: rgba(var(--clr-primary), 1);
+  font-size: var(--text-h2) !important;
+  font-weight: 900;
 }
 
 .hero-section > div > p {
@@ -329,6 +372,7 @@ header > nav > ul > li:last-child > a {
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    padding: 0;
     height: 100px;
     width: 65%;
     background: none;
@@ -339,6 +383,7 @@ header > nav > ul > li:last-child > a {
     /* position: relative;
     text-decoration: none;
     color: rgba(var(--clr-secondary), 1); */
+    font-size: var(--text-base);
   }
 
   header > nav > ul > li > a:hover,
@@ -379,37 +424,53 @@ header > nav > ul > li:last-child > a {
     padding: 0;
     display: grid;
     place-items: center;
-    grid-template-columns: 1.3fr 2fr;
+    grid-template-columns: 1.5fr 2fr;
     position: relative;
   }
+
+  /*  */
 
   .hero-section > div {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.125rem;
+    gap: 0.715rem;
   }
 
   .hero-section > div > div {
     /* Heading */
-    font-size: var(--text-h1);
+    font-size: var(--text-h3);
     font-weight: 900;
-    line-height: 2.125rem;
+    /* line-height: 2.125rem; */
+    line-height: 1.575rem;
   }
 
   .hero-section > div > div > p > span {
-    font-size: var(--text-xl) !important;
+    font-size: 3.635rem !important;
+    /* text-decoration: underline 2.5px; */
+    font-style: italic;
+    /* letter-spacing: 0.2rem; */
+    font-weight: 900;
   }
 
   .hero-section > div > div > span {
     /* Sub-Heading */
-    font-size: var(--text-h5);
+    font-size: var(--text-h6);
+  }
+
+  .hero-section > div > span {
+    /* Role */
+    color: rgba(var(--clr-primary), 1);
+    font-size: 2.835rem !important;
+    font-weight: 900;
   }
 
   .hero-section > div > p {
     /* Paragraph */
     display: block;
   }
+
+  /*  */
 
   .hero-section > div > a {
     /* Button - Projects */
@@ -422,7 +483,7 @@ header > nav > ul > li:last-child > a {
   }
 
   .hero-section > svg:not(:last-child) {
-    margin-left: 10rem;
+    margin-left: 3rem;
     margin-top: -3rem;
   }
 
@@ -447,9 +508,9 @@ header > nav > ul > li:last-child > a {
 
 .main-content {
   width: 100%;
-  padding: 0 3%;
   margin: 5rem 0rem;
   display: grid;
+  gap: 7rem;
 }
 
 .main-content > section {
@@ -553,7 +614,7 @@ header > nav > ul > li:last-child > a {
 
 .about-image > img {
   border-radius: 10%;
-  rotate: -3deg;
+  rotate: -3.5deg;
 }
 
 .about-content > div {

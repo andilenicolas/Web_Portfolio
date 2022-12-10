@@ -69,6 +69,17 @@ NavItemsContainer.addEventListener("click", (e) => {
 
 // Nav end
 
+// Back to top
+
+const BackToTop = document.querySelector(".back-to-top");
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 110 * 5) {
+    BackToTop.style.display = "block";
+  } else {
+    BackToTop.style.display = "none";
+  }
+});
+
 //Skills
 
 const Skillslist = [
