@@ -155,13 +155,79 @@
         </section>
 
         <!-- Background -->
-        <section id="Background" class="about-section">
+        <section id="Background" class="background-section">
           <div class="section-heading background-heading">
             <p>Background</p>
             <span>My Background</span>
           </div>
 
-          <div class="about-content"></div>
+          <div class="background-content">
+            <div class="background-entry">
+              <div class="background-entry-title">2023 - Now</div>
+              <div data-entry="dariel" class="background-entry-body">
+                <div class="background-entry-body-img">
+                  <img
+                    src="./images/Background Icons/dariel.jpg"
+                    alt="dariel image"
+                  />
+                </div>
+                <div class="background-entry-body-content">
+                  <span>1 Feb</span>
+                  <div>
+                    <p>
+                      <span>Dariel Solutions pty</span>
+                      <span>Software Developer</span>
+                    </p>
+                    <p>
+                      a Software consultant & development comany, headquattered
+                      in johannesburg.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="background-entry">
+              <div class="background-entry-title">2019 - 2022</div>
+              <div data-entry="uj" class="background-entry-body">
+                <div class="background-entry-body-img">
+                  <img src="./images/Background Icons/uj.png" alt="uj image" />
+                </div>
+                <div class="background-entry-body-content">
+                  <span>4 Feb - 30 Nov</span>
+                  <div>
+                    <p>
+                      <span>University of Johannesburg</span>
+                      <span>BSc Comp Sci & Inf</span>
+                    </p>
+                    <p>
+                      a University in Johannesburg, South Africa, passionate
+                      about 4IR.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="background-entry">
+              <div class="background-entry-title">2018</div>
+              <div data-entry="highschool" class="background-entry-body">
+                <div class="background-entry-body-img">
+                  <img src="./images/Background Icons/uj.png" alt="uj image" />
+                </div>
+                <div class="background-entry-body-content">
+                  <span>Jan - 1 Dec</span>
+                  <div>
+                    <p>
+                      <span>Kgomotso C.H.S</span>
+                      <span>Student</span>
+                    </p>
+                    <p>a high school in Soshanguve Pretoria.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- Skills -->
@@ -243,7 +309,7 @@
                   src="./images/Skill Icons/Frontend/bootstrap 4.jpg"
                   alt="bootstrap frontend"
                 />
-                <label>Bootstrap</label>
+                <label>Boot- strap</label>
               </span>
 
               <span id="skills-frontend">
@@ -452,7 +518,38 @@
             <span>Sample my work</span>
           </div>
 
-          <div class="projects-content"></div>
+          <div class="projects-content">
+            <div class="projects-project">
+              <img
+                src="./images/Projects/web_portfolio.png"
+                alt="web_portfolio project"
+              />
+
+              <div>Project 1</div>
+            </div>
+            <div class="projects-project">
+              <p>Project 2</p>
+              <p style="position: absolute; margin-top: 40px; opacity: 0.4">
+                coming soon
+              </p>
+            </div>
+            <div class="projects-project">
+              <p>Project 3</p>
+              <coming style="position: absolute; margin-top: 40px; opacity: 0.4">coming soon</p>
+            </div>
+            <div class="projects-project">
+              <p>Project 4</p>
+              <p style="position: absolute; margin-top: 40px; opacity: 0.4">
+                coming soon
+              </p>
+            </div>
+            <div class="projects-project">
+              <p>Project 5</p>
+              <p style="position: absolute; margin-top: 40px; opacity: 0.4">
+                coming soon
+              </p>
+            </div>
+          </div>
         </section>
 
         <!-- Interests -->
@@ -513,11 +610,147 @@
       <footer class="footer-content">
         <script>
           const footer = document.querySelector(".footer-content");
-          footer.innerHTML = `<p>all rights reserved &copy; ${new Date().getFullYear()}</p>`;
+          footer.innerHTML = `<p>all rights reserved <span style="font-weight: 900;">&copy;</span> ${new Date().getFullYear()}</p>`;
         </script>
       </footer>
 
-      <a class="back-to-top" href="#">Top</a>
+      <a class="back-to-top" href="#">
+        <!-- <img
+          src="./images/arrow-thin-chevron-right-icon.svg"
+          alt="back to top"
+        /> -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 80 45">
+          <path
+            id="XMLID_225_"
+            d="M78.935,76.1a3.559,3.559,0,0,0-5.143,0L40,110.947,6.208,76.1a3.559,3.559,0,0,0-5.143,0,3.833,3.833,0,0,0,0,5.3L37.43,118.9a3.559,3.559,0,0,0,5.142,0L78.935,81.4A3.833,3.833,0,0,0,78.935,76.1Z"
+            transform="translate(0 -75)"
+            fill="rgba(248, 247, 252, 0.75)"
+          />
+        </svg>
+      </a>
+    </section>
+
+    <section class="modal-section">
+      <div class="background-modals">
+        <div data-modal="dariel" class="hide-modal">
+          <!-- Dariel Modal -->
+
+          <!-- Top -->
+          <section class="modal-top">
+            <p data-modal="dariel">company</p>
+            <span class="btn-close-modal"></span>
+          </section>
+
+          <hr data-modal="dariel" class="modal-separator" />
+
+          <!-- Body -->
+          <section data-modal="dariel" class="modal-body">
+            <div>
+              <p data-modal="dariel">Dariel Solutions pty</p>
+              <p data-modal="dariel">Software Developer</p>
+            </div>
+            <p data-modal="dariel">
+              My role at the company can be diverse at time, this is mostly when
+              i fill shoes belong to a fontend, backend, team leader & player.
+              <br />
+              <br />
+              Daily duties mostly include writing & run test cases, modules, fix
+              bugs, communicate with both the team and client representatives.
+            </p>
+          </section>
+
+          <!-- Bottom -->
+          <section class="modal-bottom">
+            <a
+              data-modal="dariel"
+              href="https://dariel.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </a>
+          </section>
+        </div>
+        <div data-modal="uj" class="hide-modal">
+          <!-- UJ Modal -->
+
+          <!-- Top -->
+          <section class="modal-top">
+            <p data-modal="uj">university</p>
+            <span class="btn-close-modal"></span>
+          </section>
+
+          <hr data-modal="uj" class="modal-separator" />
+
+          <!-- Body -->
+          <section data-modal="uj" class="modal-body">
+            <div>
+              <p data-modal="uj">University Of Johannesburg</p>
+              <p data-modal="uj">BSc Comp Sci & Inf</p>
+            </div>
+            <p data-modal="uj">
+              My role at the company can be diverse at time, this is mostly when
+              i fill shoes belong to a fontend, backend, team leader & player.
+              <br />
+              <br />
+              Daily duties mostly include writing & run test cases, modules, fix
+              bugs, communicate with both the team and client representatives.
+            </p>
+          </section>
+
+          <!-- Bottom -->
+          <section class="modal-bottom">
+            <a
+              data-modal="uj"
+              href="https://uj.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </a>
+          </section>
+        </div>
+        <div data-modal="highschool" class="hide-modal">
+          <!-- HighSchool Modal -->
+
+          <!-- Top -->
+          <section class="modal-top">
+            <p data-modal="highschool">school</p>
+            <span class="btn-close-modal"></span>
+          </section>
+
+          <hr data-modal="highschool" class="modal-separator" />
+
+          <!-- Body -->
+          <section class="modal-body">
+            <div>
+              <p data-modal="highschool">Kgomotso C.H.S</p>
+              <p data-modal="highschool">Student (Metric)</p>
+            </div>
+            <p data-modal="highschool">
+              My role at the company can be diverse at time, this is mostly when
+              i fill shoes belong to a fontend, backend, team leader & player.
+              <br />
+              <br />
+              Daily duties mostly include writing & run test cases, modules, fix
+              bugs, communicate with both the team and client representatives.
+            </p>
+          </section>
+
+          <!-- Bottom -->
+          <!-- <section class="modal-bottom">
+            <a
+              data-modal="highschool"
+              href="https://highschool.co.za"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </a>
+          </section> -->
+        </div>
+      </div>
     </section>
   </body>
 

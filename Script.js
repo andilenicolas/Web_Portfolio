@@ -80,6 +80,44 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Background (modals)
+
+const BackgroundEntryList = [
+  ...document.querySelectorAll(".background-entry-body"),
+];
+
+const ModalSection = document.querySelector(".modal-section");
+
+// Get Modals
+const BackgroundModals = [
+  ...document.querySelector(".background-modals").children,
+];
+
+ModalSection.addEventListener("click", (e) => {
+  if (e.target.hasAttribute("data-modal") == false) {
+    ModalSection.style.display = "none";
+
+    BackgroundModals.map((Modal) => {
+      Modal.classList.remove("show-modal");
+      Modal.classList.add("hide-modal");
+    });
+  }
+});
+
+BackgroundEntryList.map((Entry) => {
+  Entry.addEventListener("click", () => {
+    ModalSection.style.display = "block";
+    const EntryAttribute = Entry.getAttribute("data-entry");
+
+    const Modal = BackgroundModals.find(
+      (Modal) => Modal.getAttribute("data-modal") == EntryAttribute
+    );
+
+    Modal.classList.remove("hide-modal");
+    Modal.classList.add("show-modal");
+  });
+});
+
 //Skills
 
 const Skillslist = [
