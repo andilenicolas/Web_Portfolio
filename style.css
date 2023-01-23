@@ -249,7 +249,7 @@ header > nav > ul {
   place-items: center;
   list-style: none;
   /* background: rgba(0, 0, 0, 0.8); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     rgba(0, 0, 0, 0.1),
     rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.7),
@@ -257,15 +257,17 @@ header > nav > ul {
     rgba(0, 0, 0, 0.7),
     rgba(0, 0, 0, 0.9),
     rgba(0, 0, 0, 1)
-  );
-  backdrop-filter: blur(10px);
+  ); */
+  /* backdrop-filter: blur(100px); */
+  background-color: rgba(var(--clr-background), 0.8);
+  backdrop-filter: blur(100px);
   animation: menu-animation 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes menu-animation {
   from {
     opacity: 0.3;
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 
   20% {
@@ -274,6 +276,10 @@ header > nav > ul {
 
   50% {
     opacity: 0.5;
+  }
+
+  80% {
+    transform: translateX(-10%);
   }
 
   to {
@@ -287,10 +293,10 @@ header > nav > ul > li > a {
   text-decoration: none;
   color: rgba(var(--clr-secondary), 1);
   font-size: var(--text-h5);
-  animation: menu-items-animation 2000ms cubic-bezier(0.23, 1, 0.32, 1);
+  /* animation: menu-items-animation 2000ms cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
-@keyframes menu-items-animation {
+/* @keyframes menu-items-animation {
   from {
     opacity: 0.3;
     transform: translateX(-200%);
@@ -305,7 +311,7 @@ header > nav > ul > li > a {
     opacity: 0.9;
     transform: translateX(0%);
   }
-}
+} */
 
 header > nav > ul > li > a:hover,
 .active-nav-item {
@@ -407,7 +413,7 @@ header > nav > ul > li:last-child > a {
   color: rgba(var(--clr-primary), 1);
   font-size: var(--text-h2) !important;
   font-weight: 900;
-  animation: my-role 10000ms cubic-bezier(0.23, 1, 0.32, 1);
+  animation: my-role 10500ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @keyframes my-role {
@@ -415,7 +421,7 @@ header > nav > ul > li:last-child > a {
     opacity: 0;
   }
 
-  30% {
+  10% {
     opacity: 0;
   }
 
@@ -527,6 +533,31 @@ header > nav > ul > li:last-child > a {
     width: 65%;
     background: none;
     backdrop-filter: none;
+    animation: menu-animation 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  @keyframes menu-animation {
+    from {
+      opacity: 0.3;
+      transform: translateX(100%);
+    }
+
+    20% {
+      font-size: 140%;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    /* 80% {
+      transform: translateX(-10%);
+    } */
+
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
   }
 
   header > nav > ul > li > a {
